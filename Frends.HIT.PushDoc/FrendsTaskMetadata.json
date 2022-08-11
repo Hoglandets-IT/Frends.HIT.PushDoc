@@ -1,7 +1,7 @@
 ﻿{
   "Tasks": [
     {
-      "TaskMethod": "Frends.HIT.PushDoc.PushDocumentation"
+      "TaskMethod": "Frends.HIT.PushDoc.Main.PushDocumentation"
     }
   ]
 }
