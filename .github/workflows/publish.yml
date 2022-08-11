@@ -15,8 +15,8 @@ jobs:
           IFS=. read -r v1 v2 v3 <<< $(cat ./VERSION)
           v3=$((v3 + 1))
           VERSION="$v1.$v2.$v3"
-          echo "Building version: $VERSION"
-          dotnet pack --configuration Release --include-source --output . /p:Version=$VERSION Frends.HIT.PushDoc/Frends.HIT.PushDoc.csproj
+          echo "Building version: *$VERSION*"
+          dotnet pack --configuration Release --include-source --output . /p:Version="$VERSION" Frends.HIT.PushDoc/Frends.HIT.PushDoc.csproj
           dotnet nuget push "Frends.HIT.PushDoc.$VERSION.nupkg" --source https://proget.hoglan.dev/nuget/Frends/ --api-key "$APIKEY"
           echo "$VERSION" > VERSION
           rm -f ./Frends.HIT.PushDoc.*.nupkg
